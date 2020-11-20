@@ -1,26 +1,26 @@
 import React, { useRef, useState } from 'react';
 import { Col, Input, Row } from 'reactstrap';
+
 import ClipIcon from '../icons/clip-icon';
 
 const InputFile = () => {
   const inputEl = useRef(null);
   const [files, setFiles] = useState([]);
 
-  const handleChange = (e) => {
-    console.log(e.target.files);
-    setFiles([...e.target.files]);
+  const handleChange = (event) => {
+    setFiles([...event.target.files]);
   };
 
   const handleFileDelete = () => {
     setFiles([]);
+
     if (inputEl?.current) {
       inputEl.current.value = '';
     }
   };
-  console.log(files.length);
+
   return (
     <>
-      <br />
       <Row
         className={`d-flex justify-content-between uploaded-file ${
           files.length < 1 ? 'hide-block' : ''

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-// import Modal from '../Modal/modal';
 import { useForm } from 'react-hook-form';
-import './form.scss';
 import {
   Button,
   FormGroup,
@@ -12,22 +10,22 @@ import {
   Row,
   Col,
 } from 'reactstrap';
+
+import './form.scss';
 import InputFile from '../upload-input-file/upload-input-file';
 import Field from '../field/field';
 import TermsModal from '../../../modals/terms-modal';
 import FeedbackModal from '../../../modals/feedback-modal';
+import { MODAL_TYPE } from '../../constants';
 
-const MODAL_TYPE = {
-  FEEDBACK: 'feedback',
-  TERMS: 'terms',
+const defaultValues = {
+  defaultValues: {
+    agreement: false,
+  },
 };
 
 const Form = () => {
-  const { handleSubmit, register, errors, watch, reset } = useForm({
-    defaultValues: {
-      agreement: false,
-    },
-  });
+  const { handleSubmit, register, errors, watch, reset } = useForm(defaultValues);
 
   const [modalType, setModalType] = useState('');
   const toggle = () => setModalType('');

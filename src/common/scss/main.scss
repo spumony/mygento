@@ -1,4 +1,10 @@
-@import 'variables.scss';
+@import './variables.scss';
+
+$theme-colors: (
+  'primary': $primary,
+);
+
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 @font-face {
   font-family: 'SF Pro Display';
