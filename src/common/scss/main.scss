@@ -1,0 +1,10 @@
+@import 'variables.scss';
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url(./../fonts/SF_Pro_Display.ttf);
+}
+
+* {
+  font-family: 'SF Pro Display';
+}
