@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Col, Input, Row } from 'reactstrap';
+import ClipIcon from '../icons/clip-icon';
 
 const InputFile = () => {
   const inputEl = useRef(null);
@@ -26,7 +27,7 @@ const InputFile = () => {
         }`}
       >
         <Col className={`${files.length < 1 ? 'hide-block' : ''}`}>
-          <img src="/clip-icon.svg" />{' '}
+          <ClipIcon />{' '}
           {files.map((item, index) => (
             <span key={index}>{item.name}</span>
           ))}
